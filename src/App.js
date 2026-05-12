@@ -1,36 +1,41 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-
-import AboutMe from "./pages/AboutMe";
-import MyCity from "./pages/MyCity";
-import MyFuture from "./pages/MyFuture";
+import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div
-        style={{
-          minHeight: "100vh",
-          background: "#7d7070",
-          color: "white",
-          padding: "20px",
-        }}
-      >
-        <Header />
+    <div>
+      <nav className="navbar">
+        <a href="#about">Про мене</a>
+        <a href="#city">Моє місто</a>
+        <a href="#future">Моє майбутнє</a>
+      </nav>
 
-        <Routes>
-          <Route path="/" element={<AboutMe />} />
+      <section className="section" id="about">
+        <h1>Про мене</h1>
+        <p>
+          Я студентка інформаційних технологій. Вивчаю React, JavaScript
+          та веброзробку.
+        </p>
+      </section>
 
-          <Route path="/my-city" element={<MyCity />} />
+      <section className="section" id="city">
+        <h1>Моє місто</h1>
+        <p>
+          Моє місто надихає мене на розвиток, навчання та нові можливості.
+        </p>
+      </section>
 
-          <Route path="/my-future" element={<MyFuture />} />
-        </Routes>
+      <section className="section" id="future">
+        <h1>Моє майбутнє</h1>
+        <p>
+          Я прагну стати Full Stack Developer та створювати сучасні сайти.
+        </p>
+      </section>
 
-        <Footer />
-      </div>
-    </BrowserRouter>
+      <footer className="footer">
+        <h2>Контакти</h2>
+        <p>GitHub | Instagram</p>
+      </footer>
+    </div>
   );
 }
 
